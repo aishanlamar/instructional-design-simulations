@@ -240,470 +240,1960 @@ a.resource-link:focus-visible {
   outline: 3px solid #A7B59A;
   outline-offset: 3px;
 }
+
+/* =====================================
+   EQUIPPING LEADERS — CINEMATIC START
+   Start passage only
+===================================== */
+
+.el-cover {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 400px;
+  background-image:
+    url("equipping-leaders-cover.png");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border-radius: 20px;
+  position: relative;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.el-cover-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 47%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.el-cover-eyebrow {
+  font-size: 10px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #66775B;
+  margin-bottom: 12px;
+}
+
+.el-cover h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 4.5vw, 64px);
+  line-height: 1.05;
+  color: #27310D;
+  margin: 0 0 14px;
+}
+
+.el-cover-accent {
+  width: 65%;
+  height: 4px;
+  background: #9BA34D;
+  border-radius: 100%;
+  margin: 0 auto 18px;
+}
+
+.el-cover-tagline {
+  font-size: clamp(13px, 1.7vw, 23px);
+  font-style: italic;
+  line-height: 1.35;
+  color: #303B38;
+  margin: 0 0 24px;
+}
+
+.el-cover-action tw-link {
+  background: #344508;
+  color: #FFFFFF !important;
+  border: none;
+  border-radius: 40px;
+  padding: 12px 20px;
+  font-size: clamp(12px, 1.3vw, 17px);
+  font-weight: bold;
+  margin: 0;
+  max-width: 100%;
+  white-space: normal;
+}
+
+.el-cover-action tw-link:hover {
+  background: #52651A;
+}
+
+/* Compact layout for smaller screens */
+
+@media (max-width: 600px) {
+
+  .el-cover {
+    aspect-ratio: auto;
+    min-height: 420px;
+    background-position: center;
+  }
+
+  .el-cover-content {
+    width: 52%;
+  }
+
+  .el-cover-eyebrow {
+    font-size: 8px;
+    letter-spacing: 0.5px;
+  }
+
+  .el-cover h1 {
+    font-size: 29px;
+  }
+
+  .el-cover-tagline {
+    font-size: 13px;
+  }
+
+  .el-cover-action tw-link {
+    font-size: 12px;
+    padding: 10px;
+  }
+
+}
+
+/* EQUIPPING LEADERS — CINEMATIC HERO */
+
+tw-passage:has(.el-hero) {
+  max-width: 1400px;
+  width: 100%;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.el-hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 500px;
+  position: relative;
+  overflow: hidden;
+  border-radius: 22px;
+
+  background-color: #F7F5EF;
+  background-image:
+    url("https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/equipping-leaders-cover.png?utm_source=chatgpt.com");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.el-hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 47%;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.el-hero h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(36px, 6vw, 105px);
+  line-height: 0.98;
+  color: #27310D;
+  margin: 0 0 18px;
+  font-weight: normal;
+}
+
+.el-hero-line {
+  width: 72%;
+  height: 5px;
+  background: #9BA34D;
+  border-radius: 50%;
+  margin: 0 auto 25px;
+}
+
+.el-hero-tagline {
+  font-family: Arial, sans-serif;
+  font-size: clamp(16px, 2.3vw, 36px);
+  font-style: italic;
+  line-height: 1.25;
+  color: #252525;
+  margin: 0 0 35px;
+}
+
+.el-hero-button tw-link {
+  display: inline-block;
+  background: #344508;
+  color: white !important;
+  border: none;
+  border-radius: 50px;
+  padding: 16px 26px;
+  font-size: clamp(13px, 1.7vw, 24px);
+  font-weight: bold;
+  text-decoration: none;
+  margin: 0;
+  white-space: normal;
+}
+
+.el-hero-button tw-link:hover {
+  background: #52651A;
+}
+
+@media (max-width: 700px) {
+  tw-passage:has(.el-hero) {
+    padding: 12px;
+  }
+
+  .el-hero {
+    min-height: 400px;
+  }
+
+  .el-hero-content {
+    width: 49%;
+  }
+
+  .el-hero h1 {
+    font-size: clamp(25px, 5vw, 42px);
+  }
+
+  .el-hero-tagline {
+    font-size: clamp(12px, 2.4vw, 18px);
+    margin-bottom: 20px;
+  }
+
+  .el-hero-button tw-link {
+    font-size: 12px;
+    padding: 11px 12px;
+  }
+}
+
+/* CINEMATIC COVER — LAYOUT CORRECTION */
+
+tw-story:has(.el-hero) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  margin: 0;
+  width: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+tw-passage:has(.el-hero) {
+  display: block;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.el-hero {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  min-height: 0;
+  height: auto;
+  position: relative;
+  overflow: hidden;
+  border-radius: 20px;
+  background-image: url("https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/equipping-leaders-cover.png");
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  container-type: inline-size;
+}
+
+.el-hero-content {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 43%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5cqw;
+  text-align: center;
+  padding: 0;
+  margin: 0;
+}
+
+.el-hero-content > br,
+.el-hero-button > br {
+  display: none;
+}
+
+.el-hero h1 {
+  font-family: Georgia, serif;
+  font-size: 7.2cqw;
+  font-weight: normal;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  color: #27310D;
+  margin: 0;
+  padding: 0;
+}
+
+.el-hero-line {
+  width: 68%;
+  height: 0.4cqw;
+  min-height: 2px;
+  background: #9BA34D;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.el-hero-tagline {
+  font-family: Arial, sans-serif;
+  font-size: 2.65cqw;
+  font-style: italic;
+  line-height: 1.2;
+  color: #252525;
+  margin: 0;
+  padding: 0;
+}
+
+.el-hero-button {
+  margin: 0.8cqw 0 0;
+  padding: 0;
+}
+
+.el-hero-button tw-link {
+  display: inline-block;
+  background: #344508;
+  color: #FFFFFF !important;
+  border: none;
+  border-radius: 50px;
+  padding: 1.2cqw 2.2cqw;
+  font-size: 2cqw;
+  font-weight: bold;
+  line-height: 1.3;
+  margin: 0;
+  white-space: normal;
+}
+
+.el-hero-button tw-link:hover {
+  background: #52651A;
+}
+
+/* PHONE LAYOUT */
+
+@media (max-width: 600px) {
+  .el-hero {
+    aspect-ratio: auto;
+    padding-top: 56.25%;
+    background-size: 100% auto;
+    background-position: top center;
+  }
+
+  .el-hero-content {
+    position: relative;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: 100%;
+    padding: 24px 16px;
+    box-sizing: border-box;
+    background: #F7F5EF;
+    gap: 16px;
+  }
+
+  .el-hero h1 {
+    font-size: 42px;
+  }
+
+  .el-hero-tagline {
+    font-size: 18px;
+  }
+
+  .el-hero-button tw-link {
+    font-size: 16px;
+    padding: 14px 24px;
+  }
+}
+      
+/* =====================================
+   EQUIPPING LEADERS
+   PERFORMANCE DASHBOARD
+   ===================================== */
+
+tw-story:has(.el-dashboard) {
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+tw-passage:has(.el-dashboard) {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.el-dashboard {
+  width: 100%;
+  color: #303B38;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.el-dashboard * {
+  box-sizing: border-box;
+}
+
+.el-dashboard > br,
+.el-profile > br,
+.el-profile-info > br,
+.el-metrics > br,
+.el-metric > br,
+.el-section-heading > br,
+.el-observations > br,
+.el-mission > br,
+.el-dashboard-action > br {
+  display: none;
+}
+
+/* TYPOGRAPHY */
+
+.el-dashboard h1 {
+  font-family: Georgia, serif;
+  font-size: clamp(30px, 4vw, 46px);
+  font-weight: normal;
+  line-height: 1.15;
+  margin: 0 0 14px;
+}
+
+.el-dashboard h2 {
+  font-family: Georgia, serif;
+  font-size: 24px;
+  font-weight: normal;
+  line-height: 1.2;
+  margin: 0 0 10px;
+}
+
+.el-dashboard p {
+  margin: 0 0 12px;
+}
+
+.el-intro {
+  color: #555F55;
+  max-width: 850px;
+}
+
+.el-small-label {
+  font-size: 11px;
+  font-weight: bold;
+  letter-spacing: 1.5px;
+  color: #66775B;
+  line-height: 1.4;
+}
+
+/* EMPLOYEE PROFILE */
+
+.el-profile {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding: 22px;
+  margin: 24px 0 28px;
+  background: #FFFFFF;
+  border: 1px solid #E5E8DF;
+  border-radius: 16px;
+}
+
+.el-profile-image {
+  display: block;
+  width: 150px;
+  height: 150px;
+  flex-shrink: 0;
+  object-fit: cover;
+  object-position: center 35%;
+  border-radius: 12px;
+}
+
+.el-profile-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.el-profile-info h2 {
+  font-size: 30px;
+  margin: 6px 0;
+}
+
+.el-role {
+  color: #66775B;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.el-profile-info p {
+  margin: 0;
+}
+
+/* PERFORMANCE METRICS */
+
+.el-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.el-section-heading h2 {
+  margin: 0;
+}
+
+.el-metrics {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.el-metric {
+  background: #FFFFFF;
+  border: 1px solid #E5E8DF;
+  border-radius: 14px;
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.el-metric-label {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.el-metric-value {
+  font-size: 44px;
+  font-weight: bold;
+  line-height: 1.1;
+  margin-bottom: 10px;
+  font-variant-numeric: tabular-nums;
+}
+
+.el-metric-standard {
+  font-size: 13px;
+  color: #555F55;
+  margin-bottom: 14px;
+}
+
+.el-concern {
+  color: #A05D36;
+}
+
+.el-positive {
+  color: #527044;
+}
+
+.el-metric-status {
+  font-size: 12px;
+  font-weight: bold;
+  border-top: 1px solid #E5E8DF;
+  padding-top: 12px;
+  margin-top: auto;
+}
+
+/* PERFORMANCE BARS */
+
+.el-meter {
+  position: relative;
+  width: 100%;
+  height: 8px;
+  background: #ECEFE8;
+  border-radius: 8px;
+  margin: 4px 0 18px;
+}
+
+.el-meter-concern {
+  height: 100%;
+  background: #A05D36;
+  border-radius: 8px;
+}
+
+.el-meter-positive {
+  height: 100%;
+  background: #758568;
+  border-radius: 8px;
+}
+
+.el-target {
+  position: absolute;
+  top: -3px;
+  width: 2px;
+  height: 14px;
+  background: #303B38;
+}
+
+/* OBSERVATIONS */
+
+.el-observations {
+  background: #FFFFFF;
+  border: 1px solid #E5E8DF;
+  border-radius: 16px;
+  padding: 24px;
+  margin: 0 0 20px;
+}
+
+.el-observations h2,
+.el-mission h2 {
+  margin: 8px 0 14px;
+}
+
+.el-observation {
+  position: relative;
+  padding: 10px 0 10px 20px;
+  border-bottom: 1px solid #ECEFE8;
+}
+
+.el-observation::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 19px;
+  width: 7px;
+  height: 7px;
+  background: #758568;
+  border-radius: 50%;
+}
+
+.el-observation:last-child {
+  border-bottom: none;
+}
+
+/* MANAGER RESPONSIBILITY */
+
+.el-mission {
+  background: #EFF1E9;
+  border-left: 4px solid #758568;
+  border-radius: 10px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.el-mission p:last-child {
+  margin-bottom: 0;
+}
+
+/* NAVIGATION */
+
+.el-dashboard-action {
+  text-align: right;
+  margin-top: 20px;
+}
+
+.el-dashboard-action tw-link {
+  margin: 0;
+  padding: 14px 24px;
+  border-radius: 10px;
+  background: #66775B;
+  color: #FFFFFF !important;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+.el-dashboard-action tw-link:hover {
+  background: #4D6046;
+}
+
+/* TABLET AND MOBILE */
+
+@media (max-width: 760px) {
+  tw-story:has(.el-dashboard) {
+    padding: 24px 16px;
+  }
+
+  .el-metrics {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .el-profile {
+    gap: 16px;
+    padding: 18px;
+  }
+
+  .el-profile-image {
+    width: 110px;
+    height: 130px;
+  }
+
+  .el-profile-info h2 {
+    font-size: 24px;
+  }
+
+  .el-metric {
+    padding: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .el-profile {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .el-profile-image {
+    width: 100%;
+    height: 220px;
+  }
+
+  .el-dashboard-action tw-link {
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+}
+
+
+  .el-hero-button tw-link {
+    font-size: 16px;
+    padding: 14px 20px;
+  }
+}
+/* ======================================
+   EQUIPPING LEADERS
+   COACHING CONVERSATION
+====================================== */
+
+tw-story:has(.el-coaching) {
+  padding: 32px 24px;
+  box-sizing: border-box;
+}
+
+tw-passage:has(.el-coaching) {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.el-coaching {
+  width: 100%;
+  color: #303B38;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.el-coaching * {
+  box-sizing: border-box;
+}
+
+.el-coaching > br,
+.el-conversation > br,
+.el-character > br,
+.el-conversation-body > br,
+.el-decision-panel > br,
+.el-choice > br {
+  display: none;
+}
+
+.el-scene-intro {
+  margin: 12px 0 24px;
+}
+
+/* CHARACTER CONVERSATION */
+
+.el-conversation {
+  display: grid;
+  grid-template-columns: 220px minmax(0, 1fr);
+  background: #FFFFFF;
+  border: 1px solid #DDE2D8;
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 24px 0;
+}
+
+.el-character {
+  background: #E4E8DF;
+  overflow: hidden;
+  min-width: 0;
+}
+
+.el-character img {
+  display: block;
+  width: 100%;
+  max-width: 220px;
+  height: 100%;
+  min-height: 260px;
+  max-height: 320px;
+  object-fit: cover;
+  object-position: center top;
+  margin: 0 auto;
+}
+
+.el-conversation-body {
+  padding: 28px;
+  align-self: center;
+}
+
+.el-conversation-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #68795D;
+  margin-bottom: 12px;
+}
+
+.el-character-name {
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.el-character-role {
+  font-size: 14px;
+  color: #68756D;
+  margin: 6px 0 18px;
+}
+
+.el-speech {
+  background: #EDF0E8;
+  border-left: 3px solid #77896B;
+  border-radius: 0 10px 10px 0;
+  padding: 20px;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* DECISION PANEL */
+
+.el-decision-panel {
+  background: #FFFFFF;
+  border: 1px solid #DDE2D8;
+  border-radius: 16px;
+  padding: 28px;
+  margin-top: 24px;
+}
+
+.el-decision-panel h2 {
+  font-size: 24px;
+  margin: 0 0 8px;
+  color: #303B38;
+}
+
+.el-decision-panel p {
+  margin: 0 0 20px;
+  color: #68756D;
+}
+
+/* RESPONSE OPTIONS */
+
+.el-choice {
+  margin-top: 12px;
+}
+
+.el-choice tw-link {
+  display: block;
+  width: 100%;
+  background: #F7F8F4;
+  color: #303B38 !important;
+  border: 1px solid #D5DCD0;
+  border-radius: 10px;
+  padding: 18px 20px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.55;
+  text-align: left;
+  white-space: normal;
+  transition: background 0.2s, border-color 0.2s;
+  cursor: pointer;
+}
+
+.el-choice tw-link:hover,
+.el-choice tw-link:focus-visible {
+  background: #E4EBDD;
+  border-color: #68795D;
+  color: #303B38 !important;
+}
+
+/* PHONE LAYOUT */
+
+@media screen and (max-width: 600px) {
+
+  tw-story:has(.el-coaching) {
+    padding: 20px 16px;
+  }
+
+  .el-conversation {
+    grid-template-columns: 1fr;
+  }
+
+  .el-character img {
+    width: 100%;
+    max-width: 100%;
+    height: 220px;
+    min-height: 0;
+    max-height: 220px;
+    object-fit: cover;
+    object-position: center 25%;
+  }
+
+  .el-conversation-body {
+    padding: 20px;
+  }
+
+  .el-decision-panel {
+    padding: 20px;
+  }
+
+  .el-decision-panel h2 {
+    font-size: 21px;
+  }
+
+  .el-choice tw-link {
+    padding: 16px;
+    font-size: 15px;
+  }
+
+  .el-speech {
+    font-size: 16px;
+    padding: 16px;
+  }
+
+}
+/* =====================================
+   EQUIPPING LEADERS
+   CONVERSATION RESPONSE LAYOUT
+===================================== */
+
+.el-response {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+  color: #303B38;
+  box-sizing: border-box;
+}
+
+.el-response * {
+  box-sizing: border-box;
+}
+
+.el-response > br,
+.el-response-character > br,
+.el-response-profile > br,
+.el-response-profile > div > br,
+.el-response-dialogue > br,
+.el-response-insight > br,
+.el-response-consequence > br,
+.el-response-next > br {
+  display: none;
+}
+
+.el-response h1 {
+  margin: 24px 0;
+}
+
+.el-response-character {
+  background: #FFFFFF;
+  border: 1px solid #DDE2D8;
+  border-radius: 14px;
+  padding: 24px;
+  margin: 0 0 20px;
+}
+
+.el-response-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.el-response-avatar {
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #E4E8DF;
+  color: #68795D;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 26px;
+  font-weight: 600;
+}
+
+.el-response-name {
+  font-size: 20px;
+  font-weight: 700;
+  color: #303B38;
+}
+
+.el-response-role {
+  font-size: 13px;
+  color: #66716B;
+  line-height: 1.5;
+}
+
+.el-response-dialogue {
+  background: #EDF0E8;
+  border-radius: 10px;
+  padding: 20px;
+  font-size: 17px;
+  line-height: 1.65;
+}
+
+.el-response-dialogue p {
+  margin: 0;
+}
+
+.el-response-insight {
+  background: #FFFFFF;
+  border: 1px solid #DDE2D8;
+  border-radius: 14px;
+  padding: 24px;
+  margin-bottom: 20px;
+}
+
+.el-response-label {
+  color: #68795D;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  margin-bottom: 10px;
+}
+
+.el-response-insight h2 {
+  font-size: 22px;
+  color: #303B38;
+  margin: 0 0 12px;
+  line-height: 1.3;
+}
+
+.el-response-insight p {
+  font-size: 16px;
+  line-height: 1.65;
+  margin: 0 0 12px;
+}
+
+.el-response-insight p:last-child {
+  margin-bottom: 0;
+}
+
+.el-response-consequence {
+  background: #E9EDE3;
+  border-left: 4px solid #68795D;
+  border-radius: 10px;
+  padding: 20px 24px;
+  margin-bottom: 24px;
+}
+
+.el-response-consequence p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.el-response-next {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.el-response-next tw-link {
+  display: inline-block;
+  background: #68795D;
+  color: #FFFFFF;
+  padding: 16px 24px;
+  border: none;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+  margin: 0;
+}
+
+.el-response-next tw-link:hover {
+  background: #52634A;
+  color: #FFFFFF;
+}
+
+/* RESPONSE MOBILE LAYOUT */
+
+@media screen and (max-width: 600px) {
+
+  .el-response h1 {
+    font-size: 30px;
+    line-height: 1.2;
+  }
+
+  .el-response-character,
+  .el-response-insight,
+  .el-response-consequence {
+    padding: 18px;
+  }
+
+  .el-response-avatar {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+  }
+
+  .el-response-profile {
+    gap: 12px;
+  }
+
+  .el-response-dialogue {
+    padding: 16px;
+    font-size: 16px;
+  }
+
+  .el-response-insight h2 {
+    font-size: 20px;
+  }
+
+  .el-response-next tw-link {
+    width: 100%;
+    padding: 14px 16px;
+  }
+
+}
+
+.el-response-avatar {
+  overflow: hidden;
+  width: 80px;
+  height: 80px;
+}
+
+.el-response-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 50%;
+}
+
+@media screen and (max-width: 600px) {
+  .el-response-avatar {
+    width: 56px;
+    height: 56px;
+  }
+}
+
+/* EQUIPPING LEADERS — COACHING DASHBOARD */
+
+.el-outcome-hero {
+  background: #e7ebe1;
+  border: 1px solid #cbd5c3;
+  border-radius: 14px;
+  padding: 24px;
+  margin: 24px 0;
+  color: #303d38;
+}
+
+.el-outcome-hero h2 {
+  color: #303d38;
+  margin: 10px 0;
+}
+
+.el-competency-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  margin: 20px 0 32px;
+}
+
+.el-competency {
+  background: #ffffff;
+  border: 1px solid #d7ded1;
+  border-radius: 12px;
+  padding: 20px;
+  min-width: 0;
+  color: #303d38;
+}
+
+.el-competency p {
+  font-size: 0.95em;
+  line-height: 1.6;
+  margin: 12px 0 0;
+}
+
+.el-status {
+  display: inline-block;
+  font-size: 0.78em;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 5px 10px;
+  margin-top: 10px;
+}
+
+.el-status.demonstrated {
+  background: #e4ecdf;
+  color: #426039;
+}
+
+.el-status.developing {
+  background: #f4ebd8;
+  color: #806329;
+}
+
+.el-status.attention {
+  background: #f3e3df;
+  color: #914e45;
+}
+
+.el-practice-question {
+  background: #e7ebe1;
+  border-left: 3px solid #748568;
+  border-radius: 0 6px 6px 0;
+  padding: 12px 16px;
+  margin-top: 12px;
+  color: #303d38;
+}
+
+@media (max-width: 600px) {
+  .el-competency-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .el-competency {
+    padding: 16px;
+  }
+
+  .el-outcome-hero {
+    padding: 18px;
+  }
+}
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="550,300" size="100,100">
-&lt;div class=&quot;eyebrow&quot;&gt;MANAGER ENABLEMENT EXPERIENCE&lt;/div&gt;
 
-&lt;h1&gt;Equipping Leaders&lt;/h1&gt;
-
-&lt;p&gt;&lt;strong&gt;From Performance Gap to Coaching Conversations&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;card&quot;&gt;
-
-&lt;h2&gt;When performance slips, what happens next?&lt;/h2&gt;
-
-&lt;p&gt;A previously reliable employee is missing deadlines. The numbers tell part of the story—but not the whole story.&lt;/p&gt;
-
-&lt;p&gt;As their manager, you&#39;ll need to uncover what&#39;s driving the performance change, navigate a challenging conversation, and establish a plan for improvement.&lt;/p&gt;
-
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;Your mission&lt;/strong&gt;
-
-Diagnose the performance gap, coach with intention, and reinforce accountability.
+{&lt;div class=&quot;el-hero&quot;&gt;
+&lt;div class=&quot;el-hero-content&quot;&gt;
+&lt;h1&gt;Equipping&lt;br&gt;Leaders&lt;/h1&gt;
+&lt;div class=&quot;el-hero-line&quot;&gt;&lt;/div&gt;
+&lt;p class=&quot;el-hero-tagline&quot;&gt;When performance slips,&lt;br&gt;what happens next&lt;br&gt;depends on you.&lt;/p&gt;
+&lt;div class=&quot;el-hero-button&quot;&gt;(link-goto: &quot;Begin the Experience →&quot;, &quot;Performance Snapshot&quot;)&lt;/div&gt;
 &lt;/div&gt;
+&lt;/div&gt;}
 
-&lt;strong&gt;What to expect&lt;/strong&gt;
 
-&lt;p&gt;Five consequential decisions. One evolving coaching conversation. Multiple possible outcomes shaped by your choices.&lt;/p&gt;
 
-&lt;p&gt;&lt;strong&gt;Estimated time:&lt;/strong&gt; 8–10 minutes&lt;/p&gt;
 
-&lt;/div&gt;
-
-(link-goto: &quot;Begin Experience →&quot;, &quot;Performance Snapshot&quot;)
 </tw-passagedata><tw-passagedata pid="2" name="Performance Snapshot" tags="" position="675,300" size="100,100">
 
 {
+&lt;div class=&quot;el-dashboard&quot;&gt;
+
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 1 · DIAGNOSE THE GAP&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;YOUR FIRST MANAGEMENT CHALLENGE&lt;/div&gt;
-&lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 10%;&quot;&gt;&lt;/div&gt;
-&lt;/div&gt;
+&lt;div class=&quot;progress-track&quot;&gt;&lt;div class=&quot;progress-fill&quot; style=&quot;width:10%;&quot;&gt;&lt;/div&gt;&lt;/div&gt;
+
 &lt;h1&gt;A Change in Performance&lt;/h1&gt;
-&lt;p&gt;You&#39;re a newly promoted manager overseeing a client operations team.&lt;/p&gt;
-&lt;p&gt;One of your most experienced employees, Jordan Ellis, has recently missed several important deadlines. This is unusual for Jordan, who has historically delivered consistent, high-quality work.&lt;/p&gt;
-&lt;div class=&quot;card&quot;&gt;
-&lt;h2&gt;Jordan&#39;s Performance Snapshot&lt;/h2&gt;
-&lt;p class=&quot;label&quot;&gt;LAST 4 WEEKS&lt;/p&gt;
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;On-Time Completion&lt;/strong&gt;
-&lt;h2&gt;72%&lt;/h2&gt;
-&lt;p&gt;Expected standard: 95%&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;Missed Deadlines&lt;/strong&gt;
-&lt;h2&gt;3&lt;/h2&gt;
-&lt;p&gt;Previous reporting period: 0&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;Quality Score&lt;/strong&gt;
-&lt;h2&gt;96%&lt;/h2&gt;
-&lt;p&gt;Expected standard: 90%&lt;/p&gt;
+&lt;p class=&quot;el-intro&quot;&gt;You&#39;re a newly promoted manager overseeing a client operations team. One of your most experienced employees is showing an unexpected change in performance.&lt;/p&gt;
+
+&lt;div class=&quot;el-profile&quot;&gt;
+&lt;img class=&quot;el-profile-image&quot; src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan Ellis&quot;&gt;
+&lt;div class=&quot;el-profile-info&quot;&gt;
+&lt;div class=&quot;el-small-label&quot;&gt;EMPLOYEE PROFILE&lt;/div&gt;
+&lt;h2&gt;Jordan Ellis&lt;/h2&gt;
+&lt;div class=&quot;el-role&quot;&gt;Client Operations · Experienced Employee&lt;/div&gt;
+&lt;p&gt;Historically reliable, with a record of consistent, high-quality work. Recently, Jordan has missed several important deadlines.&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;card&quot;&gt;
+
+&lt;div class=&quot;el-section-heading&quot;&gt;
+&lt;h2&gt;Performance Overview&lt;/h2&gt;
+&lt;span class=&quot;el-small-label&quot;&gt;LAST 4 WEEKS&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-metrics&quot;&gt;
+
+&lt;div class=&quot;el-metric&quot;&gt;
+&lt;div class=&quot;el-metric-label&quot;&gt;On-Time Completion&lt;/div&gt;
+&lt;div class=&quot;el-metric-value el-concern&quot;&gt;72%&lt;/div&gt;
+&lt;div class=&quot;el-metric-standard&quot;&gt;Expected standard: 95%&lt;/div&gt;
+&lt;div class=&quot;el-meter&quot;&gt;&lt;div class=&quot;el-meter-concern&quot; style=&quot;width:72%;&quot;&gt;&lt;/div&gt;&lt;span class=&quot;el-target&quot; style=&quot;left:95%;&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;el-metric-status el-concern&quot;&gt;23 percentage points below target&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-metric&quot;&gt;
+&lt;div class=&quot;el-metric-label&quot;&gt;Missed Deadlines&lt;/div&gt;
+&lt;div class=&quot;el-metric-value el-concern&quot;&gt;03&lt;/div&gt;
+&lt;div class=&quot;el-metric-standard&quot;&gt;Previous reporting period: 0&lt;/div&gt;
+&lt;div class=&quot;el-metric-status el-concern&quot;&gt;Increase of 3 missed deadlines&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-metric&quot;&gt;
+&lt;div class=&quot;el-metric-label&quot;&gt;Quality Score&lt;/div&gt;
+&lt;div class=&quot;el-metric-value el-positive&quot;&gt;96%&lt;/div&gt;
+&lt;div class=&quot;el-metric-standard&quot;&gt;Expected standard: 90%&lt;/div&gt;
+&lt;div class=&quot;el-meter&quot;&gt;&lt;div class=&quot;el-meter-positive&quot; style=&quot;width:96%;&quot;&gt;&lt;/div&gt;&lt;span class=&quot;el-target&quot; style=&quot;left:90%;&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+&lt;div class=&quot;el-metric-status el-positive&quot;&gt;6 percentage points above target&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;el-observations&quot;&gt;
+&lt;div class=&quot;el-small-label&quot;&gt;MANAGER OBSERVATIONS&lt;/div&gt;
 &lt;h2&gt;What You&#39;ve Observed&lt;/h2&gt;
-&lt;p&gt;Jordan has been quieter during team meetings and hasn&#39;t consistently communicated potential delays before deadlines pass.&lt;/p&gt;
-&lt;p&gt;However, the quality of Jordan&#39;s completed work remains strong.&lt;/p&gt;
+&lt;div class=&quot;el-observation&quot;&gt;Jordan has been quieter during team meetings.&lt;/div&gt;
+&lt;div class=&quot;el-observation&quot;&gt;Jordan hasn&#39;t consistently communicated potential delays before deadlines pass.&lt;/div&gt;
+&lt;div class=&quot;el-observation&quot;&gt;The quality of Jordan&#39;s completed work remains strong.&lt;/div&gt;
 &lt;/div&gt;
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;Your responsibility&lt;/strong&gt;
+
+&lt;div class=&quot;el-mission&quot;&gt;
+&lt;div class=&quot;el-small-label&quot;&gt;YOUR NEXT MOVE&lt;/div&gt;
+&lt;h2&gt;Your Responsibility&lt;/h2&gt;
 &lt;p&gt;Address the performance concern while determining what may be contributing to the change.&lt;/p&gt;
 &lt;p&gt;You have scheduled a one-on-one conversation with Jordan.&lt;/p&gt;
 &lt;/div&gt;
-(link-goto: &quot;Continue to Coaching Conversation →&quot;, &quot;Decision 1&quot;)
+
+&lt;div class=&quot;el-dashboard-action&quot;&gt;(link-goto: &quot;Continue to Coaching Conversation →&quot;, &quot;Decision 1&quot;)&lt;/div&gt;
+
+&lt;/div&gt;
 }
-</tw-passagedata><tw-passagedata pid="3" name="Decision 1" tags="" position="550,425" size="100,100">
-{
+
+</tw-passagedata><tw-passagedata pid="3" name="Decision 1" tags="" position="550,425" size="100,100">{
 (set: $openness to 0)
 (set: $clarity to 0)
+(set: $diagnosis to &quot;&quot;)
+(set: $ownership to &quot;&quot;)
+(set: $plan to &quot;&quot;)
+(set: $relationship to 0)
+
+&lt;div class=&quot;el-coaching&quot;&gt;
 
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 1 · DIAGNOSE THE GAP&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;DECISION 1 OF 5 · OPEN THE CONVERSATION&lt;/div&gt;
+
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 20%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h1&gt;The First Conversation&lt;/h1&gt;
 
-&lt;p&gt;Jordan joins your scheduled one-on-one. You have the recent performance data in front of you.&lt;/p&gt;
+&lt;p class=&quot;el-scene-intro&quot;&gt;Jordan joins your scheduled one-on-one. You have the recent performance data in front of you.&lt;/p&gt;
 
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN · CLIENT OPERATIONS SPECIALIST&lt;/div&gt;
-&lt;p&gt;&quot;Hey, thanks for making time. You mentioned wanting to discuss how things have been going?&quot;&lt;/p&gt;
+&lt;div class=&quot;el-conversation&quot;&gt;
+
+&lt;div class=&quot;el-character&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan, Client Operations Specialist&quot;&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;card&quot;&gt;
+&lt;div class=&quot;el-conversation-body&quot;&gt;
+&lt;div class=&quot;el-conversation-label&quot;&gt;COACHING CONVERSATION&lt;/div&gt;
+&lt;div class=&quot;el-character-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-character-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;div class=&quot;el-speech&quot;&gt;
+“Hey, thanks for making time. You mentioned wanting to discuss how things have been going?”
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;el-decision-panel&quot;&gt;
+
+&lt;div class=&quot;el-conversation-label&quot;&gt;YOUR TURN&lt;/div&gt;
+
 &lt;h2&gt;How do you open the conversation?&lt;/h2&gt;
+
 &lt;p&gt;Choose the response you would use as Jordan&#39;s manager.&lt;/p&gt;
 
-(link: &quot;A. &#39;I&#39;ve noticed you&#39;ve missed several deadlines recently. I need to understand why this is happening.&#39;&quot;)[
+&lt;div class=&quot;el-choice&quot;&gt;
+(link: &quot;A. “I&#39;ve noticed you&#39;ve missed several deadlines recently. I need to understand why this is happening.”&quot;)[
 (set: $openness to -1)
 (set: $clarity to 0)
+(set: $relationship to $relationship - 1)
 (go-to: &quot;Response 1A&quot;)
 ]
+&lt;/div&gt;
 
-(link: &quot;B. &#39;I&#39;ve noticed a change in your on-time completion, even though your work quality remains strong. Can we talk through what&#39;s been happening?&#39;&quot;)[
+&lt;div class=&quot;el-choice&quot;&gt;
+(link: &quot;B. “I&#39;ve noticed a change in your on-time completion, even though your work quality remains strong. Can we talk through what&#39;s been happening?”&quot;)[
 (set: $openness to 1)
 (set: $clarity to 1)
+(set: $relationship to $relationship + 2)
 (go-to: &quot;Response 1B&quot;)
 ]
+&lt;/div&gt;
 
-(link: &quot;C. &#39;I know things have been busy lately. You&#39;ve always done great work, so I&#39;m not too worried about a few missed deadlines.&#39;&quot;)[
+&lt;div class=&quot;el-choice&quot;&gt;
+(link: &quot;C. “I know things have been busy lately. You&#39;ve always done great work, so I&#39;m not too worried about a few missed deadlines.”&quot;)[
 (set: $openness to 1)
 (set: $clarity to -1)
+(set: $relationship to $relationship + 1)
 (go-to: &quot;Response 1C&quot;)
 ]
+&lt;/div&gt;
 
 &lt;/div&gt;
+&lt;/div&gt;
 }
-</tw-passagedata><tw-passagedata pid="4" name="Response 1A" tags="" position="425,425" size="100,100">
-{
-&lt;div class=&quot;eyebrow&quot;&gt;COACHING CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;JORDAN&#39;S RESPONSE&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="4" name="Response 1A" tags="" position="425,425" size="100,100">{
+&lt;div class=&quot;el-response&quot;&gt;
+
+&lt;div class=&quot;eyebrow&quot;&gt;STAGE 1 · DIAGNOSE THE GAP&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 1 OF 5&lt;/div&gt;
+
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 25%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 20%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h1&gt;A Guarded Response&lt;/h1&gt;
 
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I know I&#39;ve missed some deadlines, but I&#39;ve been working just as hard as before. There&#39;s a lot going on that isn&#39;t reflected in those numbers.&quot;&lt;/p&gt;
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
+&lt;p&gt;&quot;I know I&#39;ve missed some deadlines, but I&#39;ve been working just as hard as before. There&#39;s a lot going on that isn&#39;t reflected in those numbers.&quot;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Directness without curiosity&lt;/h2&gt;
 &lt;p&gt;You addressed the performance concern directly, but your opening focused on explaining the failure before inviting Jordan&#39;s perspective.&lt;/p&gt;
 &lt;p&gt;Jordan may now feel the need to defend their effort rather than openly explore the issue.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT?&lt;/div&gt;
 &lt;p&gt;The conversation continues. You&#39;ll have an opportunity to investigate the underlying causes and rebuild openness.&lt;/p&gt;
+&lt;/div&gt;
 
+&lt;div class=&quot;el-response-next&quot;&gt;
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 2&quot;)
-}
-</tw-passagedata><tw-passagedata pid="5" name="Response 1B" tags="" position="550,550" size="100,100">
-{
-&lt;div class=&quot;eyebrow&quot;&gt;COACHING CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;JORDAN&#39;S RESPONSE&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="5" name="Response 1B" tags="" position="675,425" size="100,100">{
+&lt;div class=&quot;el-response&quot;&gt;
+
+&lt;div class=&quot;eyebrow&quot;&gt;STAGE 1 · DIAGNOSE THE GAP&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 1 OF 5&lt;/div&gt;
+
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 25%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 20%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h1&gt;An Opening for Dialogue&lt;/h1&gt;
 
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;Yeah, I&#39;ve noticed that too. I&#39;ve been trying to keep up, but the last few weeks have been more complicated than usual.&quot;&lt;/p&gt;
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
+&lt;p&gt;&quot;Yeah, I&#39;ve noticed that too. I&#39;ve been trying to keep up, but the last few weeks have been more complicated than usual.&quot;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Balancing empathy and accountability&lt;/h2&gt;
 &lt;p&gt;You identified a specific performance concern while acknowledging Jordan&#39;s continued strengths.&lt;/p&gt;
 &lt;p&gt;Your open-ended question creates space to explore the situation without assuming the cause.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT?&lt;/div&gt;
 &lt;p&gt;Jordan appears willing to share more. Your next challenge is to determine what&#39;s contributing to the missed deadlines.&lt;/p&gt;
+&lt;/div&gt;
 
+&lt;div class=&quot;el-response-next&quot;&gt;
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 2&quot;)
-}
-</tw-passagedata><tw-passagedata pid="6" name="Response 1C" tags="" position="675,550" size="100,100">
-{
-&lt;div class=&quot;eyebrow&quot;&gt;COACHING CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;JORDAN&#39;S RESPONSE&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="6" name="Response 1C" tags="" position="550,550" size="100,100">{
+&lt;div class=&quot;el-response&quot;&gt;
+
+&lt;div class=&quot;eyebrow&quot;&gt;STAGE 1 · DIAGNOSE THE GAP&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 1 OF 5&lt;/div&gt;
+
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 25%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 20%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h1&gt;Support Without Clarity&lt;/h1&gt;
 
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;Thanks, I appreciate that. It&#39;s definitely been a busy month. I&#39;m hoping things settle down soon.&quot;&lt;/p&gt;
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking attentive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
+&lt;p&gt;&quot;Thanks, I appreciate that. It&#39;s definitely been a busy month. I&#39;m hoping things settle down soon.&quot;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Empathy without accountability&lt;/h2&gt;
 &lt;p&gt;Your reassurance helps maintain a positive relationship, but it also minimizes the missed deadlines.&lt;/p&gt;
 &lt;p&gt;Jordan may leave the conversation without understanding that improvement is expected.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT?&lt;/div&gt;
 &lt;p&gt;You still need to clarify the performance concern and explore what&#39;s contributing to it.&lt;/p&gt;
+&lt;/div&gt;
 
+&lt;div class=&quot;el-response-next&quot;&gt;
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 2&quot;)
-}
-</tw-passagedata><tw-passagedata pid="7" name="Decision 2" tags="" position="550,750" size="100,100">
+&lt;/div&gt;
+
+&lt;/div&gt;
+}</tw-passagedata><tw-passagedata pid="7" name="Decision 2" tags="" position="550,750" size="100,100">
 {
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 1 · DIAGNOSE THE GAP&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;DECISION 2 OF 5 · INVESTIGATE THE CAUSE&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 35%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 40%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h1&gt;Look Beyond the Numbers&lt;/h1&gt;
 
-&lt;p&gt;Jordan has acknowledged that the past few weeks have been challenging. Before deciding what support is needed, you want to understand what&#39;s changed.&lt;/p&gt;
+&lt;p&gt;You&#39;ve opened the conversation about Jordan&#39;s recent performance. Before deciding what support is needed, you want to understand what&#39;s contributing to the gap.&lt;/p&gt;
 
 (if: $openness &lt; 0)[
 &lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;speaker&quot;&gt;JORDAN · CLIENT OPERATIONS SPECIALIST&lt;/div&gt;
 &lt;p&gt;&quot;Like I said, I&#39;ve been putting in the effort. I&#39;m not sure what else I can tell you.&quot;&lt;/p&gt;
 &lt;/div&gt;
 ]
-
-(if: $openness is 0)[
+(else-if: $openness &gt; 0 and $clarity &gt; 0)[
 &lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;speaker&quot;&gt;JORDAN · CLIENT OPERATIONS SPECIALIST&lt;/div&gt;
+&lt;p&gt;&quot;I&#39;ve been trying to manage everything, but I&#39;m starting to feel like I&#39;m falling behind no matter what I prioritize.&quot;&lt;/p&gt;
+&lt;/div&gt;
+]
+(else:)[
+&lt;div class=&quot;dialogue&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking attentive&quot;&gt;
+&lt;/div&gt;
+&lt;div class=&quot;speaker&quot;&gt;JORDAN · CLIENT OPERATIONS SPECIALIST&lt;/div&gt;
 &lt;p&gt;&quot;I know the deadlines matter. Things have just been more complicated lately.&quot;&lt;/p&gt;
 &lt;/div&gt;
 ]
 
-(if: $openness &gt; 0)[
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I&#39;ve been trying to manage everything, but I&#39;m starting to feel like I&#39;m falling behind no matter what I prioritize.&quot;&lt;/p&gt;
-&lt;/div&gt;
-]
 
 &lt;div class=&quot;card&quot;&gt;
 &lt;h2&gt;What do you explore next?&lt;/h2&gt;
-&lt;p&gt;Choose the response most likely to help you identify an appropriate intervention.&lt;/p&gt;
+&lt;p&gt;Choose how you would continue the conversation with Jordan.&lt;/p&gt;
 
-(link: &quot;A. &#39;Would some additional time-management training help you stay on top of your deadlines?&#39;&quot;)	[(set: $diagnosis to &quot;training&quot;)
+(link: &quot;A. &#39;Would some additional time-management training help you stay on top of your deadlines?&#39;&quot;)[
+(set: $diagnosis to &quot;training&quot;)
 (set: $clarity to $clarity - 1)
 (go-to: &quot;Response 2A&quot;)
 ]
 
-(link: &quot;B. &#39;Can you walk me through your current priorities, including any new requests or competing deadlines?&#39;&quot;)	[(set: $diagnosis to &quot;investigate&quot;)
-(set: $clarity to $clarity + 2)
-(set: $openness to $openness + 1)
-(go-to: &quot;Response 2B&quot;)
-]
-
-(link: &quot;C. &#39;Regardless of how busy things are, I need you to meet deadlines and flag delays earlier. Can we agree on that?&#39;&quot;)[(set: $diagnosis to &quot;expectations&quot;)
+(link: &quot;B. &#39;Regardless of how busy things are, I need you to meet deadlines and flag delays earlier. Can we agree on that?&#39;&quot;)[
+(set: $diagnosis to &quot;expectations&quot;)
 (set: $clarity to $clarity - 1)
 (set: $openness to $openness - 1)
 (go-to: &quot;Response 2C&quot;)
 ]
 
+(link: &quot;C. &#39;Can you walk me through your current priorities, including any new requests or competing deadlines?&#39;&quot;)[
+(set: $diagnosis to &quot;investigate&quot;)
+(set: $clarity to $clarity + 2)
+(set: $openness to $openness + 1)
+(go-to: &quot;Response 2B&quot;)
+]
+
 &lt;/div&gt;
 }
+
 </tw-passagedata><tw-passagedata pid="8" name="Response 2A" tags="" position="425,750" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 2 · CHOOSE THE RESPONSE&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;INVESTIGATION OUTCOME&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 2 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 45%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 40%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h1&gt;A Solution Too Soon&lt;/h1&gt;
 
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I don&#39;t think another training course is going to help. I already know how to organize my work. It&#39;s just that everything seems urgent right now.&quot;&lt;/p&gt;
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking reserved&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
+&lt;p&gt;&quot;I don&#39;t think another training course is going to help. I already know how to organize my work. It&#39;s just that everything seems urgent right now.&quot;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Prescribing before diagnosing&lt;/h2&gt;
 &lt;p&gt;Time-management support may be useful when an employee lacks planning skills, but Jordan&#39;s strong historical performance doesn&#39;t establish a skill gap.&lt;/p&gt;
 &lt;p&gt;By recommending training before investigating the situation, you risk treating the symptom rather than the cause.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;What you&#39;ve learned:&lt;/strong&gt; Jordan believes the problem involves competing demands, but you haven&#39;t established where those demands originate.&lt;/p&gt;
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT YOU&#39;VE LEARNED&lt;/div&gt;
+&lt;p&gt;Jordan believes the problem involves competing demands, but you haven&#39;t established where those demands originate.&lt;/p&gt;
+&lt;/div&gt;
 
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 3&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="9" name="Response 2B" tags="" position="675,750" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 2 · CHOOSE THE RESPONSE&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;INVESTIGATION OUTCOME&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 2 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 45%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 40%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h1&gt;The Underlying Barrier Emerges&lt;/h1&gt;
 
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;I&#39;ve been supporting the rollout project in addition to my usual work. The project lead keeps sending urgent requests, but my regular deadlines haven&#39;t changed.&quot;&lt;/p&gt;
 &lt;p&gt;&quot;I&#39;ve been trying to handle both because I assumed that&#39;s what was expected.&quot;&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Investigating before intervening&lt;/h2&gt;
 &lt;p&gt;You investigated the conditions surrounding the performance gap rather than assuming Jordan lacked capability or motivation.&lt;/p&gt;
 &lt;p&gt;You&#39;ve uncovered a potential priority conflict that requires further clarification before selecting an intervention.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;What you&#39;ve learned:&lt;/strong&gt; Jordan may be receiving competing expectations from multiple stakeholders. You still need to determine how those priorities were communicated and why delays weren&#39;t escalated earlier.&lt;/p&gt;
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT YOU&#39;VE LEARNED&lt;/div&gt;
+&lt;p&gt;Jordan may be receiving competing expectations from multiple stakeholders. You still need to determine how those priorities were communicated and why delays weren&#39;t escalated earlier.&lt;/p&gt;
+&lt;/div&gt;
 
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 3&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="10" name="Response 2C" tags="" position="550,875" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 2 · CHOOSE THE RESPONSE&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;INVESTIGATION OUTCOME&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 2 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 45%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 40%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;h1&gt;Agreement Without Understanding&lt;/h1&gt;
 
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;Yes, I understand. I&#39;ll do my best to communicate sooner.&quot;&lt;/p&gt;
 &lt;p&gt;&quot;I just don&#39;t know how I&#39;m supposed to keep everything moving when priorities keep changing.&quot;&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
 
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Accountability without diagnosis&lt;/h2&gt;
 &lt;p&gt;Clarifying performance expectations is important, and Jordan does have a responsibility to communicate risks.&lt;/p&gt;
 &lt;p&gt;However, agreement alone doesn&#39;t establish whether Jordan has the capacity, direction, or resources to meet those expectations.&lt;/p&gt;
 &lt;/div&gt;
 
-&lt;p&gt;&lt;strong&gt;What you&#39;ve learned:&lt;/strong&gt; Jordan has agreed to communicate earlier, but the reason priorities keep changing remains unresolved.&lt;/p&gt;
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT YOU&#39;VE LEARNED&lt;/div&gt;
+&lt;p&gt;Jordan has agreed to communicate earlier, but the reason priorities keep changing remains unresolved.&lt;/p&gt;
+&lt;/div&gt;
 
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 3&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="11" name="Decision 3" tags="" position="550,1075" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 3 · LEAD THE CONVERSATION&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;DECISION 3 OF 5 · NAVIGATE RESISTANCE&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 55%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 60%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;When Frustration Surfaces&lt;/h1&gt;
+
 &lt;p&gt;As the conversation continues, Jordan becomes visibly frustrated.&lt;/p&gt;
 
-(if: $clarity &gt;= 2)[
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I&#39;ve been supporting the rollout project while trying to keep up with my regular deadlines. Both teams say their work is urgent.&quot;&lt;/p&gt;
-&lt;p&gt;&quot;I&#39;m being asked to prioritize everything, but somehow I&#39;m the only one being held accountable when something slips.&quot;&lt;/p&gt;
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking frustrated&quot;&gt;
 &lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
+(if: $diagnosis is &quot;investigate&quot;)[
+&lt;p&gt;&quot;I&#39;ve been supporting the rollout project while trying to keep up with my regular deadlines. Both teams say their work is urgent.&quot;&lt;/p&gt;
+]
+(else:)[
+&lt;p&gt;&quot;I keep getting urgent requests from different people, and I&#39;m trying to make everyone happy.&quot;&lt;/p&gt;
 ]
 
-(else:)[
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I keep getting urgent requests from different people, and I&#39;m trying to make everyone happy.&quot;&lt;/p&gt;
 &lt;p&gt;&quot;I&#39;m being asked to prioritize everything, but somehow I&#39;m the only one being held accountable when something slips.&quot;&lt;/p&gt;
 &lt;/div&gt;
-]
+&lt;/div&gt;
+
 
 &lt;div class=&quot;card&quot;&gt;
 &lt;h2&gt;How do you respond?&lt;/h2&gt;
-&lt;p&gt;Jordan has raised a legitimate concern, but missed deadlines and delayed communication still need to be addressed.&lt;/p&gt;
+&lt;p&gt;Choose how you would address Jordan&#39;s frustration and continue the conversation.&lt;/p&gt;
 
-(link: &quot;A. &#39;I hear your frustration, but everyone has competing priorities. You still need to find a way to meet your deadlines.&#39;&quot;)[
-(set: $openness to $openness - 2)
-(go-to: &quot;Response 3A&quot;)
-]
-
-(link: &quot;B. &#39;You&#39;re right that conflicting priorities make this difficult. Let&#39;s clarify what I need to address and what you can do differently when deadlines are at risk.&#39;&quot;)[
+(link: &quot;A. &#39;You&#39;re right that conflicting priorities make this difficult. Let&#39;s clarify what I need to address and what you can do differently when deadlines are at risk.&#39;&quot;)[
 (set: $openness to $openness + 1)
 (set: $clarity to $clarity + 1)
+(set: $relationship to $relationship + 2)
 (go-to: &quot;Response 3B&quot;)
+]
+
+(link: &quot;B. &#39;I hear your frustration, but everyone has competing priorities. You still need to find a way to meet your deadlines.&#39;&quot;)[
+(set: $openness to $openness - 2)
+(set: $relationship to $relationship - 2)
+(go-to: &quot;Response 3A&quot;)
 ]
 
 (link: &quot;C. &#39;That sounds frustrating. I&#39;ll speak with the project lead and take care of the competing requests so you don&#39;t have to worry about them.&#39;&quot;)[
 (set: $openness to $openness + 1)
+(set: $relationship to $relationship + 1)
 (go-to: &quot;Response 3C&quot;)
 ]
+&lt;/div&gt;
 &lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="12" name="Response 3A" tags="" position="400,1075" size="100,100">
 {
-&lt;div class=&quot;eyebrow&quot;&gt;COACHING CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;THE IMPACT OF YOUR RESPONSE&lt;/div&gt;
+&lt;div class=&quot;el-response&quot;&gt;
+&lt;div class=&quot;eyebrow&quot;&gt;STAGE 3 · LEAD THE CONVERSATION&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 3 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 65%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 60%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;Resistance Increases&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;Okay. I understand deadlines are important.&quot;&lt;/p&gt;
 &lt;p&gt;&quot;I guess I&#39;ll just have to figure something out.&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Accountability without support&lt;/h2&gt;
 &lt;p&gt;You reinforced accountability, but Jordan&#39;s concern about conflicting priorities remains unaddressed.&lt;/p&gt;
 &lt;p&gt;Jordan&#39;s agreement may signal a desire to end the uncomfortable conversation rather than genuine commitment to a workable solution.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
 &lt;p&gt;You still need to determine how responsibilities and support will be shared.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 4&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="13" name="Response 3B" tags="" position="700,1075" size="100,100">
 {
-&lt;div class=&quot;eyebrow&quot;&gt;COACHING CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;THE IMPACT OF YOUR RESPONSE&lt;/div&gt;
+&lt;div class=&quot;el-response&quot;&gt;
+&lt;div class=&quot;eyebrow&quot;&gt;STAGE 3 · LEAD THE CONVERSATION&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 3 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 65%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 60%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;A Productive Turning Point&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;That would help. I haven&#39;t always known which requests should come first.&quot;&lt;/p&gt;
 &lt;p&gt;&quot;And I probably should have said something sooner instead of trying to handle everything myself.&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Creating shared accountability&lt;/h2&gt;
 &lt;p&gt;You acknowledged a legitimate workplace barrier without removing Jordan&#39;s responsibility to communicate risks.&lt;/p&gt;
 &lt;p&gt;This creates an opportunity for shared problem-solving rather than defensiveness or one-sided accountability.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
 &lt;p&gt;Jordan is ready to discuss a realistic division of responsibilities.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 4&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="14" name="Response 3C" tags="" position="550,1225" size="100,100">
 {
-&lt;div class=&quot;eyebrow&quot;&gt;COACHING CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;THE IMPACT OF YOUR RESPONSE&lt;/div&gt;
+&lt;div class=&quot;el-response&quot;&gt;
+&lt;div class=&quot;eyebrow&quot;&gt;STAGE 3 · LEAD THE CONVERSATION&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 3 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 65%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 60%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;Support Without Ownership&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking attentive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;Thanks. That would definitely take some pressure off.&quot;&lt;/p&gt;
 &lt;p&gt;&quot;Should I just wait for you to tell me what to prioritize from now on?&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Support that creates dependency&lt;/h2&gt;
 &lt;p&gt;You recognized that the manager has a role in resolving conflicting stakeholder expectations.&lt;/p&gt;
 &lt;p&gt;However, taking complete ownership of the problem may unintentionally reduce Jordan&#39;s responsibility to flag risks and participate in prioritization.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
 &lt;p&gt;You need to establish shared responsibilities without making the employee dependent on the manager for every decision.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;Continue the Conversation →&quot;, &quot;Decision 4&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="15" name="Decision 4" tags="" position="550,1400" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 3 · LEAD THE CONVERSATION&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;DECISION 4 OF 5 · ESTABLISH ACCOUNTABILITY&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
-&lt;div class=&quot;progress-fill&quot; style=&quot;width: 75%;&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;progress-fill&quot; style=&quot;width: 80%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;Who Owns the Solution?&lt;/h1&gt;
+
 &lt;p&gt;The conversation has reached a turning point. You need to translate what you&#39;ve learned into practical actions.&lt;/p&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
 (if: $openness &lt;= 0)[
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I understand that I need to improve. Just tell me what you want me to do differently.&quot;&lt;/p&gt;
-&lt;/div&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
+]
+(else-if: $clarity &gt;= 2)[
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
 ]
 (else:)[
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I want to get things back on track. I just need to know how we&#39;re going to handle the competing requests.&quot;&lt;/p&gt;
-&lt;/div&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking attentive&quot;&gt;
 ]
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
+(if: $openness &lt;= 0)[
+&lt;p&gt;&quot;I understand that I need to improve. Just tell me what you want me to do differently.&quot;&lt;/p&gt;
+]
+(else-if: $clarity &gt;= 2)[
+&lt;p&gt;&quot;I want to get things back on track. I just need to know how we&#39;re going to handle the competing requests.&quot;&lt;/p&gt;
+]
+(else:)[
+&lt;p&gt;&quot;I appreciate the support. I&#39;m just not sure what I&#39;m expected to handle differently going forward.&quot;&lt;/p&gt;
+]
+&lt;/div&gt;
+&lt;/div&gt;
+
+
 &lt;div class=&quot;card&quot;&gt;
 &lt;h2&gt;What approach do you take?&lt;/h2&gt;
-&lt;p&gt;Choose how to establish responsibilities for addressing the performance concern.&lt;/p&gt;
+&lt;p&gt;Choose how you would move the conversation toward an action plan.&lt;/p&gt;
 
 (link: &quot;A. &#39;I&#39;ll review your workload and decide which tasks you should prioritize. Just follow the updated list I provide.&#39;&quot;)[
 (set: $openness to $openness + 1)
@@ -711,114 +2201,199 @@ Diagnose the performance gap, coach with intention, and reinforce accountability
 (go-to: &quot;Response 4A&quot;)
 ]
 
-(link: &quot;B. &#39;I&#39;ll align with the project lead on priorities. You&#39;ll flag deadline risks early and bring competing requests to our weekly check-ins so we can resolve them together.&#39;&quot;)[
+(link: &quot;B. &#39;I need you to manage your workload more independently. Let&#39;s focus on improving how you organize and prioritize your tasks.&#39;&quot;)[
+(set: $openness to $openness - 1)
+(set: $ownership to &quot;employee&quot;)
+(go-to: &quot;Response 4C&quot;)
+]
+
+(link: &quot;C. &#39;I&#39;ll align with the relevant stakeholders on priorities. You&#39;ll flag deadline risks as they arise, and we&#39;ll use our weekly check-ins to review progress and resolve ongoing conflicts.&#39;&quot;)[
 (set: $openness to $openness + 1)
 (set: $clarity to $clarity + 1)
 (set: $ownership to &quot;shared&quot;)
 (go-to: &quot;Response 4B&quot;)
 ]
-
-(link: &quot;C. &#39;I need you to manage your workload more independently. Let&#39;s focus on improving how you organize and prioritize your tasks.&#39;&quot;)[
-(set: $openness to $openness - 1)
-(set: $ownership to &quot;employee&quot;)
-(go-to: &quot;Response 4C&quot;)
-]
+&lt;/div&gt;
 &lt;/div&gt;
 }
+
+
 
 </tw-passagedata><tw-passagedata pid="16" name="Response 4A" tags="" position="400,1400" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 3 · LEAD THE CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;ACCOUNTABILITY OUTCOME&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 4 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 80%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;Support Becomes Dependence&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking attentive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;Okay, that would help. I&#39;ll wait for your updated priorities before making changes.&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Taking ownership instead of building it&lt;/h2&gt;
 &lt;p&gt;You recognized that Jordan needs clearer priorities, but you&#39;ve taken over responsibility for managing the work.&lt;/p&gt;
 &lt;p&gt;Without a clear expectation for Jordan to identify and escalate future conflicts, the same issue may return.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
 &lt;p&gt;You need a follow-up plan that supports improvement without creating unnecessary dependence on the manager.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;Build the Follow-Up Plan →&quot;, &quot;Decision 5&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="17" name="Response 4B" tags="" position="700,1400" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 3 · LEAD THE CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;ACCOUNTABILITY OUTCOME&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 4 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 80%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;Shared Ownership&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;That makes sense. If I know which priorities take precedence, I can flag conflicts sooner instead of trying to handle everything myself.&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Establishing mutual responsibility&lt;/h2&gt;
 &lt;p&gt;You established shared responsibility: the manager will clarify stakeholder priorities, while Jordan will communicate risks and participate in ongoing prioritization.&lt;/p&gt;
 &lt;p&gt;This approach addresses the workplace barrier without removing employee accountability.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
 &lt;p&gt;You&#39;ll now establish measurable expectations and a follow-up process to evaluate improvement.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;Build the Follow-Up Plan →&quot;, &quot;Decision 5&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="18" name="Response 4C" tags="" position="550,1550" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 3 · LEAD THE CONVERSATION&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;ACCOUNTABILITY OUTCOME&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 4 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 80%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;Accountability Without Support&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;I&#39;ll try. I just hope the requests from the other team slow down.&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Expectations without enabling conditions&lt;/h2&gt;
 &lt;p&gt;You reinforced Jordan&#39;s responsibility for managing work, but you haven&#39;t resolved the competing stakeholder expectations.&lt;/p&gt;
 &lt;p&gt;Without addressing the conditions contributing to the missed deadlines, improvement may be difficult to sustain.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
 &lt;p&gt;The follow-up plan will determine whether expectations, support, and accountability are clearly established.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;Build the Follow-Up Plan →&quot;, &quot;Decision 5&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="19" name="Decision 5" tags="" position="550,1725" size="100,100">
+
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 4 · REINFORCE IMPROVEMENT&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;DECISION 5 OF 5 · PLAN THE FOLLOW-UP&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 90%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;From Conversation to Action&lt;/h1&gt;
+
 &lt;p&gt;The conversation is coming to a close. Jordan needs clear expectations, appropriate support, and a practical way to monitor progress.&lt;/p&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
 (if: $ownership is &quot;shared&quot;)[
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I feel better knowing we&#39;ll work through the competing priorities. What should we aim for over the next few weeks?&quot;&lt;/p&gt;
-&lt;/div&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
 ]
 (else-if: $ownership is &quot;manager&quot;)[
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;Once you&#39;ve updated my priorities, should I just follow that list? How will we know if things are improving?&quot;&lt;/p&gt;
-&lt;/div&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking attentive&quot;&gt;
 ]
 (else:)[
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
-&lt;p&gt;&quot;I&#39;ll try to get things back on track. What would you like to see from me?&quot;&lt;/p&gt;
-&lt;/div&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
 ]
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
+(if: $ownership is &quot;shared&quot;)[
+&lt;p&gt;&quot;I feel better knowing we&#39;ll work through the competing priorities. What should we aim for over the next few weeks?&quot;&lt;/p&gt;
+]
+(else-if: $ownership is &quot;manager&quot;)[
+&lt;p&gt;&quot;Once you&#39;ve updated my priorities, should I just follow that list? How will we know if things are improving?&quot;&lt;/p&gt;
+]
+(else:)[
+&lt;p&gt;&quot;I&#39;ll try to get things back on track. What would you like to see from me?&quot;&lt;/p&gt;
+]
+&lt;/div&gt;
+&lt;/div&gt;
+
 &lt;div class=&quot;card&quot;&gt;
 &lt;h2&gt;Which follow-up plan do you establish?&lt;/h2&gt;
-&lt;p&gt;Choose the approach most likely to support sustained improvement.&lt;/p&gt;
+&lt;p&gt;Choose how you would conclude the coaching conversation.&lt;/p&gt;
 
 (link: &quot;A. &#39;Let&#39;s aim to get your deadlines back on track. We&#39;ll reconnect next month to see how things are going.&#39;&quot;)[
 (set: $plan to &quot;vague&quot;)
@@ -836,261 +2411,458 @@ Diagnose the performance gap, coach with intention, and reinforce accountability
 (go-to: &quot;Response 5C&quot;)
 ]
 &lt;/div&gt;
+&lt;/div&gt;
 }
+
 </tw-passagedata><tw-passagedata pid="20" name="Response 5A" tags="" position="400,1725" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 4 · REINFORCE IMPROVEMENT&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;FOLLOW-UP CONSEQUENCE&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 5 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 95%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;A Plan Without Precision&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking attentive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;Okay, that sounds good. I&#39;ll keep working on it and we can talk next month.&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Intentions without measurable expectations&lt;/h2&gt;
 &lt;p&gt;Your plan communicates a general expectation for improvement, but it doesn&#39;t establish measurable checkpoints, specific support, or a clear process for addressing new obstacles.&lt;/p&gt;
 &lt;p&gt;Without those elements, the manager and employee may interpret success differently.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Review the likely outcome of your coaching decisions.&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
+&lt;p&gt;Review how your coaching decisions may influence Jordan&#39;s ability to sustain improvement.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;See Your Coaching Outcome →&quot;, &quot;Coaching Outcome&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="21" name="Response 5B" tags="" position="700,1725" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 4 · REINFORCE IMPROVEMENT&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;FOLLOW-UP CONSEQUENCE&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 5 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 95%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;A Measurable Path Forward&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;That gives me something concrete to work toward. If priorities change again, I&#39;ll bring it up before it affects a deadline.&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Turning commitments into measurable actions&lt;/h2&gt;
 &lt;p&gt;You established a measurable performance target, a defined review period, and regular opportunities to address emerging barriers.&lt;/p&gt;
 &lt;p&gt;This creates a stronger foundation for evaluating improvement rather than relying on a general promise to do better.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Review how your decisions shaped the overall coaching outcome.&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
+&lt;p&gt;Review how your decisions shaped the overall coaching outcome and established a foundation for sustained improvement.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;See Your Coaching Outcome →&quot;, &quot;Coaching Outcome&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="22" name="Response 5C" tags="" position="550,1875" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;STAGE 4 · REINFORCE IMPROVEMENT&lt;/div&gt;
-&lt;div class=&quot;label&quot;&gt;FOLLOW-UP CONSEQUENCE&lt;/div&gt;
+&lt;div class=&quot;label&quot;&gt;CONVERSATION OUTCOME · 5 OF 5&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 95%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;Oversight Without Independence&lt;/h1&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN&lt;/div&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Client Operations Specialist&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
 &lt;p&gt;&quot;I can send you updates every day. I guess I&#39;ll wait for your direction before changing priorities.&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Coaching insight&lt;/strong&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-insight&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;COACHING INSIGHT&lt;/div&gt;
+&lt;h2&gt;Monitoring without developing independence&lt;/h2&gt;
 &lt;p&gt;Frequent monitoring can be appropriate when performance risks require closer oversight, but it should have a clear purpose and exit criteria.&lt;/p&gt;
 &lt;p&gt;This approach increases managerial control without establishing how Jordan will regain independent ownership or how improvement will be measured.&lt;/p&gt;
 &lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;What happens next?&lt;/strong&gt;&lt;/p&gt;
-&lt;p&gt;Review the likely outcome of your coaching decisions.&lt;/p&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;WHAT HAPPENS NEXT&lt;/div&gt;
+&lt;p&gt;Review how your coaching decisions may influence Jordan&#39;s long-term accountability and independence.&lt;/p&gt;
+&lt;/div&gt;
+
 (link-goto: &quot;See Your Coaching Outcome →&quot;, &quot;Coaching Outcome&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="23" name="Coaching Outcome" tags="" position="550,2025" size="100,100">
-(collapse:)[
+{
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;YOUR COACHING OUTCOME&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;EXPERIENCE COMPLETE&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 100%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;h1&gt;The Impact of Your Decisions&lt;/h1&gt;
-&lt;p&gt;Coaching effectiveness depends on more than how the conversation feels. It also depends on whether the manager identifies barriers, establishes accountability, and follows through.&lt;/p&gt;
 
-(if: $ownership is &quot;shared&quot; and $plan is &quot;measurable&quot; and $clarity &gt;= 3 and $openness &gt; 0)[
-&lt;div class=&quot;card&quot;&gt;
-&lt;div class=&quot;eyebrow&quot;&gt;OUTCOME · SHARED ACCOUNTABILITY&lt;/div&gt;
-&lt;h2&gt;A Foundation for Sustainable Improvement&lt;/h2&gt;
-&lt;p&gt;Jordan leaves the conversation with clearer expectations, an appropriate division of responsibilities, and a measurable plan for improvement.&lt;/p&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN · THREE WEEKS LATER&lt;/div&gt;
-&lt;p&gt;&quot;Having clear priorities helped. I&#39;ve been flagging conflicts earlier, and our check-ins have made it easier to adjust before deadlines slip.&quot;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Likely impact:&lt;/strong&gt; Greater employee ownership, improved communication, and a stronger foundation for sustained performance.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h1&gt;Your Coaching Impact&lt;/h1&gt;
+&lt;p&gt;Explore how your decisions shaped Jordan&#39;s experience, readiness to improve, and ability to sustain performance.&lt;/p&gt;
+
+(set: $outcome to &quot;mixed&quot;)
+
+(if: $diagnosis is &quot;investigate&quot; and $ownership is &quot;shared&quot; and $plan is &quot;measurable&quot; and $relationship &gt;= 3 and $clarity &gt;= 3 and $openness &gt; 0)[
+(set: $outcome to &quot;strong&quot;)
 ]
-(else-if: $openness &lt;= -1 or ($ownership is &quot;employee&quot; and $plan is not &quot;measurable&quot;))[
-&lt;div class=&quot;card&quot;&gt;
-&lt;div class=&quot;eyebrow&quot;&gt;OUTCOME · COMPLIANCE WITHOUT COMMITMENT&lt;/div&gt;
-&lt;h2&gt;Agreement Isn&#39;t the Same as Improvement&lt;/h2&gt;
-&lt;p&gt;Jordan understands that performance must improve, but the conversation has not sufficiently addressed the barriers or created shared commitment.&lt;/p&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN · THREE WEEKS LATER&lt;/div&gt;
-&lt;p&gt;&quot;I&#39;ve been trying to meet the deadlines, but I&#39;m still getting conflicting requests. I&#39;m not sure what I&#39;m supposed to prioritize.&quot;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Likely impact:&lt;/strong&gt; Continued performance risk, reduced openness, and limited confidence in the improvement plan.&lt;/p&gt;
-&lt;/div&gt;
+(else-if: $openness &lt;= -1 or $relationship &lt; 0 or ($ownership is &quot;employee&quot; and $plan is not &quot;measurable&quot;))[
+(set: $outcome to &quot;risk&quot;)
+]
+
+&lt;div class=&quot;el-outcome-hero&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;YOUR COACHING APPROACH&lt;/div&gt;
+
+(if: $outcome is &quot;strong&quot;)[
+&lt;h2&gt;Coaching with Accountability&lt;/h2&gt;
+&lt;p&gt;You balanced constructive dialogue, performance diagnosis, shared responsibility, and measurable follow-through.&lt;/p&gt;
+]
+(else-if: $outcome is &quot;risk&quot;)[
+&lt;h2&gt;Performance Risk Remains&lt;/h2&gt;
+&lt;p&gt;Your approach established some expectations, but important barriers to engagement or sustained improvement remain.&lt;/p&gt;
 ]
 (else:)[
-&lt;div class=&quot;card&quot;&gt;
-&lt;div class=&quot;eyebrow&quot;&gt;OUTCOME · SUPPORT WITHOUT RESOLUTION&lt;/div&gt;
-&lt;h2&gt;Good Intentions, Incomplete Follow-Through&lt;/h2&gt;
-&lt;p&gt;Some parts of your coaching approach helped Jordan feel supported or understand expectations. However, important elements of diagnosis, accountability, or reinforcement remain incomplete.&lt;/p&gt;
-&lt;div class=&quot;dialogue&quot;&gt;
-&lt;div class=&quot;speaker&quot;&gt;JORDAN · THREE WEEKS LATER&lt;/div&gt;
-&lt;p&gt;&quot;Things have improved a little, but I&#39;m still not completely sure how we should handle competing priorities when they come up.&quot;&lt;/p&gt;
-&lt;/div&gt;
-&lt;p&gt;&lt;strong&gt;Likely impact:&lt;/strong&gt; Partial improvement, with unresolved risks that may affect long-term performance.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h2&gt;Building Toward Effective Coaching&lt;/h2&gt;
+&lt;p&gt;Your decisions demonstrated elements of effective coaching, with opportunities to strengthen diagnosis, dialogue, accountability, or follow-through.&lt;/p&gt;
 ]
+&lt;/div&gt;
 
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;h2&gt;Reflect on Your Approach&lt;/h2&gt;
-&lt;p&gt;Consider these questions:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;1.&lt;/strong&gt; Did you investigate the cause before choosing an intervention?&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;2.&lt;/strong&gt; Did you balance employee accountability with managerial support?&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;3.&lt;/strong&gt; Did your follow-up plan establish observable expectations and a process for reviewing progress?&lt;/p&gt;
+&lt;h2&gt;Your Coaching Competencies&lt;/h2&gt;
+&lt;p&gt;These indicators reflect the behaviors demonstrated in this scenario, rather than a formal assessment of leadership proficiency.&lt;/p&gt;
+
+&lt;div class=&quot;el-competency-grid&quot;&gt;
+
+&lt;div class=&quot;el-competency&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;01 · RELATIONSHIP BUILDING&lt;/div&gt;
+(if: $relationship &gt;= 3)[
+&lt;span class=&quot;el-status demonstrated&quot;&gt;Demonstrated&lt;/span&gt;
+&lt;p&gt;You used constructive dialogue to acknowledge concerns and encourage participation.&lt;/p&gt;
+]
+(else-if: $relationship &gt;= 0)[
+&lt;span class=&quot;el-status developing&quot;&gt;Developing&lt;/span&gt;
+&lt;p&gt;Your approach included supportive behaviors but missed opportunities to build a collaborative dialogue.&lt;/p&gt;
+]
+(else:)[
+&lt;span class=&quot;el-status attention&quot;&gt;Needs Attention&lt;/span&gt;
+&lt;p&gt;Your approach risked limiting trust and discouraging Jordan from sharing concerns.&lt;/p&gt;
+]
+&lt;/div&gt;
+
+&lt;div class=&quot;el-competency&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;02 · PERFORMANCE DIAGNOSIS&lt;/div&gt;
+(if: $diagnosis is &quot;investigate&quot;)[
+&lt;span class=&quot;el-status demonstrated&quot;&gt;Demonstrated&lt;/span&gt;
+&lt;p&gt;You explored the performance context before recommending an intervention.&lt;/p&gt;
+]
+(else-if: $diagnosis is &quot;training&quot;)[
+&lt;span class=&quot;el-status developing&quot;&gt;Developing&lt;/span&gt;
+&lt;p&gt;You offered a potential solution before confirming whether a skill gap existed.&lt;/p&gt;
+]
+(else:)[
+&lt;span class=&quot;el-status attention&quot;&gt;Needs Attention&lt;/span&gt;
+&lt;p&gt;You reinforced expectations without sufficiently investigating the underlying barrier.&lt;/p&gt;
+]
+&lt;/div&gt;
+
+&lt;div class=&quot;el-competency&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;03 · SHARED ACCOUNTABILITY&lt;/div&gt;
+(if: $ownership is &quot;shared&quot;)[
+&lt;span class=&quot;el-status demonstrated&quot;&gt;Demonstrated&lt;/span&gt;
+&lt;p&gt;You balanced managerial support with employee responsibility.&lt;/p&gt;
+]
+(else-if: $ownership is &quot;manager&quot;)[
+&lt;span class=&quot;el-status developing&quot;&gt;Developing&lt;/span&gt;
+&lt;p&gt;You offered support but assumed too much responsibility for managing the solution.&lt;/p&gt;
+]
+(else:)[
+&lt;span class=&quot;el-status attention&quot;&gt;Needs Attention&lt;/span&gt;
+&lt;p&gt;You emphasized employee accountability without adequately addressing workplace barriers.&lt;/p&gt;
+]
+&lt;/div&gt;
+
+&lt;div class=&quot;el-competency&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;04 · PERFORMANCE REINFORCEMENT&lt;/div&gt;
+(if: $plan is &quot;measurable&quot;)[
+&lt;span class=&quot;el-status demonstrated&quot;&gt;Demonstrated&lt;/span&gt;
+&lt;p&gt;You established a measurable target, review period, and regular checkpoints.&lt;/p&gt;
+]
+(else-if: $plan is &quot;directive&quot;)[
+&lt;span class=&quot;el-status developing&quot;&gt;Developing&lt;/span&gt;
+&lt;p&gt;You established oversight but did not define measurable milestones or a path toward independence.&lt;/p&gt;
+]
+(else:)[
+&lt;span class=&quot;el-status attention&quot;&gt;Needs Attention&lt;/span&gt;
+&lt;p&gt;Your follow-up plan lacked measurable expectations and timely checkpoints.&lt;/p&gt;
+]
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;h2&gt;Three Weeks Later&lt;/h2&gt;
+&lt;p&gt;Explore one possible consequence of your coaching approach.&lt;/p&gt;
+
+&lt;div class=&quot;el-response-character&quot;&gt;
+&lt;div class=&quot;el-response-profile&quot;&gt;
+&lt;div class=&quot;el-response-avatar&quot;&gt;
+(if: $outcome is &quot;strong&quot;)[
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-receptive.png&quot; alt=&quot;Jordan looking receptive&quot;&gt;
+]
+(else-if: $outcome is &quot;risk&quot;)[
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-guarded.png&quot; alt=&quot;Jordan looking guarded&quot;&gt;
+]
+(else:)[
+&lt;img src=&quot;https://aishanlamar.github.io/instructional-design-simulations/assets/equipping-leaders/jordan-neutral.png&quot; alt=&quot;Jordan looking attentive&quot;&gt;
+]
+&lt;/div&gt;
+&lt;div&gt;
+&lt;div class=&quot;el-response-name&quot;&gt;Jordan&lt;/div&gt;
+&lt;div class=&quot;el-response-role&quot;&gt;Simulated Performance Follow-Up&lt;/div&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-dialogue&quot;&gt;
+(if: $outcome is &quot;strong&quot;)[
+&lt;p&gt;&quot;Having clear priorities helped. I&#39;ve been flagging conflicts earlier, and our check-ins have made it easier to adjust before deadlines slip.&quot;&lt;/p&gt;
+]
+(else-if: $outcome is &quot;risk&quot;)[
+&lt;p&gt;&quot;I&#39;ve been trying to improve, but I&#39;m still finding it difficult to raise concerns and manage competing expectations.&quot;&lt;/p&gt;
+]
+(else:)[
+&lt;p&gt;&quot;Some things are clearer now, but I think we still have a few things to work through before I can consistently meet expectations.&quot;&lt;/p&gt;
+]
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;LIKELY PERFORMANCE IMPACT&lt;/div&gt;
+(if: $outcome is &quot;strong&quot;)[
+&lt;h2&gt;A Foundation for Sustainable Improvement&lt;/h2&gt;
+&lt;p&gt;Greater employee ownership, clearer communication, and a stronger foundation for meeting performance expectations.&lt;/p&gt;
+]
+(else-if: $outcome is &quot;risk&quot;)[
+&lt;h2&gt;Continued Performance Risk&lt;/h2&gt;
+&lt;p&gt;Unresolved barriers or limited engagement may prevent consistent improvement.&lt;/p&gt;
+]
+(else:)[
+&lt;h2&gt;Partial Improvement&lt;/h2&gt;
+&lt;p&gt;Some progress may occur, but unresolved coaching gaps could affect long-term performance.&lt;/p&gt;
+]
 &lt;/div&gt;
 
 (link-goto: &quot;Review Your Coaching Debrief →&quot;, &quot;Coaching Debrief&quot;)
-]</tw-passagedata><tw-passagedata pid="24" name="Key Takeaways" tags="" position="550,2300" size="100,100">
+&lt;/div&gt;
+}
+</tw-passagedata><tw-passagedata pid="24" name="Key Takeaways" tags="" position="550,2300" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;MANAGER ENABLEMENT EXPERIENCE&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;YOUR LEADERSHIP PLAYBOOK&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 100%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
+
 &lt;h1&gt;From Insight to Action&lt;/h1&gt;
 &lt;p&gt;Effective coaching isn&#39;t about having all the answers. It&#39;s about asking better questions, addressing the right barriers, and creating shared accountability for improvement.&lt;/p&gt;
 
-&lt;div class=&quot;card&quot;&gt;
 &lt;h2&gt;Three Practices to Take Forward&lt;/h2&gt;
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;01 · DIAGNOSE&lt;/strong&gt;
-&lt;p&gt;Look beyond the performance metric. Explore what has changed, distinguish skill gaps from workplace barriers, and avoid prescribing solutions before understanding the cause.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;02 · COACH&lt;/strong&gt;
-&lt;p&gt;Use specific observations and open questions. Acknowledge legitimate concerns while maintaining clear performance expectations. Balance empathy with accountability.&lt;/p&gt;
-&lt;/div&gt;
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;03 · REINFORCE&lt;/strong&gt;
-&lt;p&gt;Translate the conversation into action. Agree on measurable expectations, clarify responsibilities, identify necessary support, and schedule meaningful follow-up.&lt;/p&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;PRACTICE 01&lt;/div&gt;
+&lt;h2&gt;Diagnose&lt;/h2&gt;
+&lt;p&gt;Look beyond the performance metric. Explore what has changed, distinguish skill gaps from workplace barriers, and validate the cause before recommending a solution.&lt;/p&gt;
+&lt;div class=&quot;el-practice-question&quot;&gt;
+&lt;strong&gt;Ask this:&lt;/strong&gt;
+&lt;p&gt;&quot;What&#39;s getting in the way of meeting expectations?&quot;&lt;/p&gt;
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;card&quot;&gt;
-&lt;h2&gt;Take It Back to Work&lt;/h2&gt;
-&lt;p&gt;Effective coaching continues beyond the conversation. Use this practical resource to diagnose performance concerns, guide meaningful discussions, and reinforce improvement.&lt;/p&gt;
-&lt;div class=&quot;soft-card&quot;&gt;
-&lt;strong&gt;MANAGER COACHING GUIDE&lt;/strong&gt;
-&lt;p&gt;Diagnose → Coach → Reinforce&lt;/p&gt;
-&lt;p&gt;A one-page performance support resource featuring coaching questions, diagnostic prompts, and an actionable follow-up framework.&lt;/p&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;PRACTICE 02&lt;/div&gt;
+&lt;h2&gt;Coach&lt;/h2&gt;
+&lt;p&gt;Use specific observations and open questions. Acknowledge legitimate concerns while maintaining clear expectations and shared accountability.&lt;/p&gt;
+&lt;div class=&quot;el-practice-question&quot;&gt;
+&lt;strong&gt;Ask this:&lt;/strong&gt;
+&lt;p&gt;&quot;What can we each do to address this?&quot;&lt;/p&gt;
 &lt;/div&gt;
-&lt;a href=&quot;Manager_Coaching_Guide.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;resource-link&quot;&gt;View Manager Coaching Guide →&lt;/a&gt;
 &lt;/div&gt;
 
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Final reflection&lt;/strong&gt;
-&lt;p&gt;Think about your decisions throughout the conversation. Where did you make assumptions? When did you uncover useful information? How did your choices influence Jordan&#39;s willingness to participate in the solution?&lt;/p&gt;
-&lt;p&gt;Remember: a productive conversation is only the beginning. Sustained improvement requires follow-through.&lt;/p&gt;
+&lt;div class=&quot;card&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;PRACTICE 03&lt;/div&gt;
+&lt;h2&gt;Reinforce&lt;/h2&gt;
+&lt;p&gt;Translate the conversation into action. Establish measurable expectations, clarify responsibilities, identify support, and schedule meaningful follow-up.&lt;/p&gt;
+&lt;div class=&quot;el-practice-question&quot;&gt;
+&lt;strong&gt;Ask this:&lt;/strong&gt;
+&lt;p&gt;&quot;How will we know improvement is happening?&quot;&lt;/p&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-outcome-hero&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;PERFORMANCE SUPPORT RESOURCE&lt;/div&gt;
+&lt;h2&gt;Manager Coaching Guide&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Diagnose → Coach → Reinforce&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;A one-page workplace resource featuring diagnostic prompts, coaching questions, and an actionable follow-up framework.&lt;/p&gt;
+&lt;a href=&quot;https://aishanlamar.github.io/instructional-design-simulations/Manager_Coaching_Guide.pdf&quot; target=&quot;_blank&quot; rel=&quot;noopener noreferrer&quot; class=&quot;resource-link&quot;&gt;View Manager Coaching Guide →&lt;/a&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;soft-card&quot;&gt;
+&lt;h2&gt;Your Next Conversation&lt;/h2&gt;
+&lt;p&gt;Identify one upcoming performance conversation where you can apply these three practices.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Remember:&lt;/strong&gt; A productive conversation is only the beginning. Sustained improvement requires follow-through.&lt;/p&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;el-response-consequence&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;EXPERIENCE COMPLETE&lt;/div&gt;
+&lt;h2&gt;Every Decision Shapes the Outcome&lt;/h2&gt;
+&lt;p&gt;Replay the experience to explore a different coaching approach and observe how your decisions influence Jordan&#39;s response.&lt;/p&gt;
 &lt;/div&gt;
 
 (link-goto: &quot;Replay the Experience →&quot;, &quot;Decision 1&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata><tw-passagedata pid="25" name="Coaching Debrief" tags="" position="550,2150" size="100,100">
 {
+&lt;div class=&quot;el-response&quot;&gt;
 &lt;div class=&quot;eyebrow&quot;&gt;YOUR PERSONALIZED COACHING DEBRIEF&lt;/div&gt;
 &lt;div class=&quot;label&quot;&gt;REFLECT · APPLY · IMPROVE&lt;/div&gt;
 &lt;div class=&quot;progress-track&quot;&gt;
 &lt;div class=&quot;progress-fill&quot; style=&quot;width: 100%;&quot;&gt;&lt;/div&gt;
 &lt;/div&gt;
-&lt;h1&gt;How Did You Lead?&lt;/h1&gt;
-&lt;p&gt;Review how your decisions supported or limited the coaching conversation. Use these insights to strengthen your next performance discussion.&lt;/p&gt;
+
+&lt;h1&gt;Your Development Priorities&lt;/h1&gt;
+&lt;p&gt;Use these personalized recommendations to strengthen your next performance conversation.&lt;/p&gt;
 
 &lt;div class=&quot;card&quot;&gt;
-&lt;h2&gt;01 · Diagnosing the Gap&lt;/h2&gt;
-
-(if: $diagnosis is &quot;investigate&quot;)[
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Strength: Exploring the performance context&lt;/strong&gt;
-&lt;p&gt;Your decisions helped surface contributing factors rather than focusing exclusively on missed deadlines.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Take forward:&lt;/strong&gt; Continue validating possible causes before recommending an intervention.&lt;/p&gt;
-&lt;/div&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;01 · BUILD THE RELATIONSHIP&lt;/div&gt;
+(if: $relationship &gt;= 3)[
+&lt;h2&gt;Continue creating space for dialogue&lt;/h2&gt;
+&lt;p&gt;Maintain your collaborative approach while keeping performance expectations clear.&lt;/p&gt;
 ]
 (else:)[
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Opportunity: Investigate before intervening&lt;/strong&gt;
-&lt;p&gt;Your approach left important questions about competing priorities or workplace barriers unresolved.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Try next time:&lt;/strong&gt; Ask what has changed, which expectations may conflict, and what support the employee needs.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h2&gt;Make the conversation collaborative&lt;/h2&gt;
+&lt;p&gt;Open with specific observations, acknowledge concerns, and invite the employee to share their perspective before offering solutions.&lt;/p&gt;
 ]
+&lt;div class=&quot;el-practice-question&quot;&gt;
+&lt;strong&gt;Try asking:&lt;/strong&gt;
+&lt;p&gt;&quot;I&#39;ve noticed a change in your performance. What&#39;s been happening from your perspective?&quot;&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;card&quot;&gt;
-&lt;h2&gt;02 · Establishing Accountability&lt;/h2&gt;
-
-(if: $ownership is &quot;shared&quot;)[
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Strength: Creating shared ownership&lt;/strong&gt;
-&lt;p&gt;You established responsibilities for both the manager and employee, addressing organizational barriers while maintaining employee accountability.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Take forward:&lt;/strong&gt; Clarify who will take each action and when.&lt;/p&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;02 · DIAGNOSE THE GAP&lt;/div&gt;
+(if: $diagnosis is &quot;investigate&quot;)[
+&lt;h2&gt;Continue validating the cause&lt;/h2&gt;
+&lt;p&gt;Use performance evidence and employee input to distinguish skill gaps from workplace barriers.&lt;/p&gt;
+]
+(else:)[
+&lt;h2&gt;Investigate before intervening&lt;/h2&gt;
+&lt;p&gt;Explore changes in workload, resources, expectations, and stakeholder priorities before selecting an intervention.&lt;/p&gt;
+]
+&lt;div class=&quot;el-practice-question&quot;&gt;
+&lt;strong&gt;Try asking:&lt;/strong&gt;
+&lt;p&gt;&quot;What has changed recently that might be affecting your ability to meet expectations?&quot;&lt;/p&gt;
 &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class=&quot;card&quot;&gt;
+&lt;div class=&quot;el-response-label&quot;&gt;03 · ESTABLISH ACCOUNTABILITY&lt;/div&gt;
+(if: $ownership is &quot;shared&quot;)[
+&lt;h2&gt;Maintain shared responsibility&lt;/h2&gt;
+&lt;p&gt;Document who owns each action and when it should be completed.&lt;/p&gt;
 ]
 (else-if: $ownership is &quot;manager&quot;)[
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Opportunity: Avoid taking over the solution&lt;/strong&gt;
-&lt;p&gt;You offered support, but your approach placed too much responsibility for managing future priorities on the manager.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Try next time:&lt;/strong&gt; Remove barriers while requiring the employee to identify and escalate emerging risks.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h2&gt;Support without taking over&lt;/h2&gt;
+&lt;p&gt;Remove organizational barriers while requiring the employee to identify and escalate emerging risks.&lt;/p&gt;
 ]
 (else:)[
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Opportunity: Balance expectations with support&lt;/strong&gt;
-&lt;p&gt;You emphasized employee responsibility without adequately addressing the competing demands affecting performance.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Try next time:&lt;/strong&gt; Clarify stakeholder priorities and agree on the employee&#39;s responsibility to communicate risks.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h2&gt;Balance expectations with support&lt;/h2&gt;
+&lt;p&gt;Clarify stakeholder priorities and identify the support the employee needs to meet expectations.&lt;/p&gt;
 ]
+&lt;div class=&quot;el-practice-question&quot;&gt;
+&lt;strong&gt;Try asking:&lt;/strong&gt;
+&lt;p&gt;&quot;What can you take ownership of, and what support do you need from me?&quot;&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;card&quot;&gt;
-&lt;h2&gt;03 · Reinforcing Improvement&lt;/h2&gt;
-
+&lt;div class=&quot;el-response-label&quot;&gt;04 · REINFORCE IMPROVEMENT&lt;/div&gt;
 (if: $plan is &quot;measurable&quot;)[
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Strength: Establishing measurable follow-through&lt;/strong&gt;
-&lt;p&gt;You selected a defined review period, performance target, and regular opportunities to address emerging barriers.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Take forward:&lt;/strong&gt; Document the plan and review both results and remaining obstacles.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h2&gt;Follow through on your commitments&lt;/h2&gt;
+&lt;p&gt;Document the agreed plan and use regular check-ins to review results and remaining barriers.&lt;/p&gt;
 ]
 (else-if: $plan is &quot;directive&quot;)[
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Opportunity: Build independence into the plan&lt;/strong&gt;
-&lt;p&gt;Your follow-up approach emphasized close oversight without defining how Jordan would regain ownership.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Try next time:&lt;/strong&gt; Establish measurable milestones and reduce oversight as performance stabilizes.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h2&gt;Build independence into the plan&lt;/h2&gt;
+&lt;p&gt;Establish measurable milestones and define when closer oversight can be reduced.&lt;/p&gt;
 ]
 (else:)[
-&lt;div class=&quot;feedback&quot;&gt;
-&lt;strong&gt;Opportunity: Make expectations observable&lt;/strong&gt;
-&lt;p&gt;Your follow-up plan lacked specific checkpoints and measurable expectations.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Try next time:&lt;/strong&gt; Agree on a performance target, review timeline, and process for raising risks.&lt;/p&gt;
-&lt;/div&gt;
+&lt;h2&gt;Make improvement observable&lt;/h2&gt;
+&lt;p&gt;Agree on a specific performance target, review timeline, and process for raising risks.&lt;/p&gt;
 ]
+&lt;div class=&quot;el-practice-question&quot;&gt;
+&lt;strong&gt;Try asking:&lt;/strong&gt;
+&lt;p&gt;&quot;What will improvement look like, and when should we review our progress?&quot;&lt;/p&gt;
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;div class=&quot;soft-card&quot;&gt;
-&lt;h2&gt;Your Leadership Takeaway&lt;/h2&gt;
-&lt;p&gt;Effective coaching connects three responsibilities:&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Diagnose&lt;/strong&gt; the conditions affecting performance.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Coach&lt;/strong&gt; through dialogue and shared accountability.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Reinforce&lt;/strong&gt; improvement through measurable follow-up.&lt;/p&gt;
+&lt;h2&gt;Reflect on Your Approach&lt;/h2&gt;
+&lt;p&gt;Which of these four practices would make the greatest difference in your next performance conversation?&lt;/p&gt;
+&lt;p&gt;Identify one specific behavior you can commit to applying.&lt;/p&gt;
 &lt;/div&gt;
 
 (link-goto: &quot;View Your Leadership Playbook →&quot;, &quot;Key Takeaways&quot;)
+&lt;/div&gt;
 }
 </tw-passagedata></tw-storydata>
 <script title="Twine engine code" data-main="harlowe">(function(){"use strict";
